@@ -74,11 +74,6 @@ a {
     }
 }
 
-nav a {
-    color: var(--clr-text);
-    text-decoration: none;
-}
-
 button {
     width: fit-content;
     height: 50px;
@@ -154,4 +149,10 @@ select {
         outline-offset: -2px;
         outline-color: var(--clr-primary-dark);
     }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
