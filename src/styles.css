@@ -13,8 +13,8 @@
     --clr-background-secondary: #FFFFFF;
     --clr-text: #212121;
     --clr-text-secondary: #616161;
-    --clr-primary: #BCB8B1;
-    --clr-primary-dark: #8A817C;
+    --clr-primary: #104B45;
+    --clr-secondary: #F6C11C;
     --clr-error: #E53935;
     --clr-warning: #E9D502;
     --clr-success: #43A047;
@@ -51,7 +51,7 @@ h3 {
 a, button {
     user-select: none;
     cursor: pointer;
-   
+
     transition: scale 150ms ease-in-out,
                 transform 200ms ease-in;
 }
@@ -60,7 +60,7 @@ a {
     color: var(--clr-primary-dark);
     text-decoration: underline;
     text-underline-offset: .1em;
-   
+
     max-width: fit-content;
     height: 1lh;
 

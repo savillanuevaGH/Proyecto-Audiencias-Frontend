@@ -7,9 +7,9 @@ import { UsuariosComponent } from '../pages/usuarios/usuarios.component';
 
 export const routes: Routes = [
     { path: '', component: AudienciasComponent },
-    { path: '/salas', component: SalasComponent },
-    { path: '/autoridades', component: AutoridadesComponent },
-    { path: '/distritos', component: DistritosJudicialesComponent },
-    { path: '/admin/usuarios', component: UsuariosComponent },
+    { path: 'salas', component: SalasComponent },
+    { path: 'autoridades', component: AutoridadesComponent },
+    { path: 'distritos', component: DistritosJudicialesComponent },
+    { path: 'admin/usuarios', component: UsuariosComponent },
     { path: '**', redirectTo: '' }
 ];
