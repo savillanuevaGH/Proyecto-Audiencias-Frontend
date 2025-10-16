@@ -2,11 +2,17 @@
     <div class="header__section header__info">
         <h1>SGA - Sistema de Gestión de Audiencias</h1>
         <div class="center">
+          @if (isLoggedIn === true) {
             <div class="header__userdata">
                 <p id="user-name">Nombre de Usuario</p>
                 <span id="user-role">Rol</span>
                 <img src="https://imgs.search.brave.com/RULxjJhwaLnxq7z7m0s8vys1GEk4F_SjVkPaaMXp-6M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL3RodW1icy81/ODVlNGJkN2NiMTFi/MjI3NDkxYzMzOTcu/cG5n" alt="El icono de la foto de perfil del usuario" id="user-img">
             </div>
+          }
+
+          @else {
+            <button class="login-btn" (click)="openLoginModal()">Iniciar Sesión</button>
+          }
         </div>
     </div>
 
@@ -14,30 +20,30 @@
         <nav>
             <ul class="header__nav">
                 <li>
-                    <a 
-                    [routerLink]="['/']" 
+                    <a
+                    [routerLink]="['/']"
                     routerLinkActive="active-link"
                     [routerLinkActiveOptions]="{ exact: true }"
                         >Audiencias
                     </a>
                 </li>
                 <li>
-                    <a 
-                    [routerLink]="['/salas']" 
+                    <a
+                    [routerLink]="['/salas']"
                     routerLinkActive="active-link"
                         >Salas
                     </a>
                 </li>
                 <li>
-                    <a 
-                    [routerLink]="['/autoridades']" 
+                    <a
+                    [routerLink]="['/autoridades']"
                     routerLinkActive="active-link"
                         >Autoridades
                     </a>
                 </li>
                 <li>
-                    <a 
-                    [routerLink]="['/distritos']" 
+                    <a
+                    [routerLink]="['/distritos']"
                     routerLinkActive="active-link"
                         >Distritos Judiciales
                     </a>
