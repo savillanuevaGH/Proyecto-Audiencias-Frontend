@@ -1,0 +1,19 @@
+@if (currentNotification) {
+    <div class="popup-notification"
+         [ngClass]="currentNotification.type">
+
+        @if (currentNotification.type === 'success') {
+            <span class="material-icons success">check_circle</span>
+        }
+
+        @if (currentNotification.type === 'warning') {
+            <span class="material-icons warning">info</span>
+        }
+
+        @if (currentNotification.type === 'error') {
+            <span class="material-icons error">error</span>
+        }
+
+        <p class="message">{{ currentNotification.message }}</p>
+        </div>
+}

@@ -1,0 +1,34 @@
+.popup-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  padding: 0.5rem 0.8rem;
+
+  background-color: var(--clr-background);
+  border: 2px solid var(--clr-primary);
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+}
+
+.popup-notification.success {
+  color: var(--clr-success);
+}
+
+.popup-notification.warning {
+  color: var(--clr-warning);
+}
+
+.popup-notification.error {
+  color: var(--clr-error);
+}
+
+.popup-notification .message {
+  margin-right: 1rem;
+  color: var(--clr-text);
+  font-weight: 600;
+}
