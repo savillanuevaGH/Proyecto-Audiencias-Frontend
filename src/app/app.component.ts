@@ -15,5 +15,4 @@ export class AppComponent {
 
   // Servicio que maneja las notificaciones
   constructor(private notificationService: NotificationService) {}
-
 }

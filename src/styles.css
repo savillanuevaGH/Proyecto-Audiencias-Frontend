@@ -80,7 +80,7 @@ button {
     font-family: var(--font-family), sans-serif;
     font-size: var(--fs-text-s);
     font-weight: 700;
-    color: var(--clr-text);
+    color: var(--clr-secondary);
     padding: 0.75em 1.5em;
     border-radius: 12px;
     border-color: transparent;
@@ -91,14 +91,14 @@ button {
     }
 
     &:focus, &:focus-visible {
-        font-weight: 500;
-        outline: 3px solid var(--clr-primary-dark);
+        font-weight: 800;
+        outline: 3px solid var(--clr-secondary);
         outline-offset: -6px;
     }
 
     &:active {
         color: var(--clr-primary);
-        background-color: var(--clr-primary-dark);
+        background-color: var(--clr-secondary);
         outline: 2px solid var(--clr-primary);
         scale: 0.95;
     }
@@ -121,7 +121,7 @@ input {
 
     &:focus, &:focus-visible {
         outline-offset: -2px;
-        outline-color: var(--clr-primary-dark);
+        outline-color: var(--clr-primary);
     }
 
     &:user-valid:not(:placeholder-shown) {
@@ -147,7 +147,7 @@ select {
 
     &:focus, &:focus-visible {
         outline-offset: -2px;
-        outline-color: var(--clr-primary-dark);
+        outline-color: var(--clr-primary);
     }
 }
 
