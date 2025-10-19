@@ -1,12 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '../../../material/material/material.module';
 import { NotificationService, Notification } from '../../services/notification.service';
 import { Subscription, timer } from 'rxjs';
 
 @Component({
   selector: 'app-popup-notification',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MaterialModule],
   templateUrl: './popup-notification.component.html',
   styleUrl: './popup-notification.component.css'
 })

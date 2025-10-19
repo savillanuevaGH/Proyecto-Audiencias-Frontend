@@ -1,5 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+.mat-mdc-unelevated-button,
+.mat-mdc-raised-button,
+.mat-mdc-elevated-button {
+  padding: 0.875em 1.5em !important;
+  /* Estado Normal */
+  background-color: var(--clr-primary) !important;
+  font-weight: 700 !important;
+  color: var(--clr-secondary) !important;
+
+  /* Estilos de Contenedor */
+  box-shadow: none !important;
+  border-radius: 12px !important;
+
+  /* Estado Active */
+  &:active {
+    background-color: var(--clr-secondary) !important;
+    color: var(--clr-primary) !important;
+    scale: 0.95;
+  }
+
+  /* ------------------------------------------------------------- */
+  /* ESTADO DISABLED (DESHABILITADO) */
+  /* ------------------------------------------------------------- */
+  &.mat-mdc-button-disabled {
+    /* 1. Fondo: Un color gris claro o un derivado de tu color primario con baja opacidad */
+    background-color: var(--clr-text-secondary, #616161) !important; 
+    
+    /* 2. Color del Texto: Un gris más oscuro o el primario con baja opacidad */
+    color: var(--clr-background) !important; 
+    
+    /* 3. Desactivar el efecto de opacidad que Material aplica por defecto */
+    opacity: 0.6 !important; /* O usa un valor que funcione con tu diseño */
+    
+    /* 4. Asegurar que no reaccione al hover/active */
+    pointer-events: none;
+  }
+}
+
+:root {
+  /* Fondo del Input (Blanco) */
+  --mat-form-field-container-color: var(--clr-background-secondary, #FFFFFF); 
+  /* Radio del Borde */
+  --mat-form-field-container-shape: 14px; 
+  /* Altura total */
+  --mat-form-field-container-height: 50px;
+  --mat-form-field-width: 100%;
+}
+
+.mat-form-field-appearance-fill .mat-mdc-text-field-wrapper {
+  /* Borde de la Píldora (Visible siempre, reemplaza el outline) */
+  border: 1px solid var(--clr-text-secondary, #616161) !important; 
+  border-radius: var(--mat-form-field-container-shape) !important;
+  
+  /* Quitar los efectos visuales internos de Material */
+  box-shadow: none !important;
+  padding: 0 !important; 
+  width: var(--mat-form-field-width) !important;
+  height: var(--mat-form-field-container-height) !important;
+}
+
+/* Ocultar la línea inferior en estado normal (inactivo) */
+.mat-form-field-appearance-fill .mat-mdc-form-field-bottom-element {
+    display: none !important;
+}
+
+/* Ocultar la línea gris de base que a veces persiste */
+.mat-form-field-appearance-fill .mat-mdc-form-field-underline {
+    opacity: 0 !important;
+}
+
+/* Configurar el color de FOCUS de la barra inferior con tu color primario */
+.mat-form-field-appearance-fill.mat-focused .mat-mdc-form-field-focus-overlay {
+    /* Aquí se define el color de la barra que aparece. Es una capa que se pone encima. */
+    background-color: var(--clr-primary, #104B45) !important; 
+    
+    /* Configura la altura de la barra de enfoque. Por defecto es 2px */
+    height: 2px !important; 
+    
+    /* Asegúrate de que el contenedor no tenga el borde de píldora cuando está en focus */
+    outline: none !important; 
+    border-color: transparent !important;
+}
+
+/* Eliminar el fondo gris que aparece al hacer focus */
+.mat-form-field-appearance-fill.mat-focused .mat-mdc-text-field-wrapper {
+    background-color: var(--clr-background-secondary) !important;
+    border-color: transparent !important; /* Desactiva el borde gris al enfocar */
+}
+
+/* El input nativo (Padding y Centrado) */
+.mat-mdc-form-field-input-control {
+  padding: 0 16px !important; 
+  line-height: var(--mat-form-field-container-height); 
+}
+
 :root {
     --font-family: 'Inter';
 
@@ -71,83 +166,6 @@ a {
     &:active {
         color: var(--clr-primary);
         scale: 0.95;
-    }
-}
-
-button {
-    width: fit-content;
-    height: 50px;
-    font-family: var(--font-family), sans-serif;
-    font-size: var(--fs-text-s);
-    font-weight: 700;
-    color: var(--clr-secondary);
-    padding: 0.75em 1.5em;
-    border-radius: 12px;
-    border-color: transparent;
-    background-color: var(--clr-primary);
-
-    &:hover {
-        transform: scale(1.025);
-    }
-
-    &:focus, &:focus-visible {
-        font-weight: 800;
-        outline: 3px solid var(--clr-secondary);
-        outline-offset: -6px;
-    }
-
-    &:active {
-        color: var(--clr-primary);
-        background-color: var(--clr-secondary);
-        outline: 2px solid var(--clr-primary);
-        scale: 0.95;
-    }
-}
-
-input {
-    width: min(250px, 450px);
-    height: 50px;
-    font-family: var(--font-family), sans-serif;
-    font-size: var(--fs-text);
-    padding: 0.375em 0.75em;
-    border: 1px solid var(--clr-text-secondary);
-    border-radius: 0.875em;
-    background-color: var(--clr-background);
-
-    &::placeholder {
-        font-size: var(--fs-text);
-        font-family: var(--font-family), sans-serif;
-    }
-
-    &:focus, &:focus-visible {
-        outline-offset: -2px;
-        outline-color: var(--clr-primary);
-    }
-
-    &:user-valid:not(:placeholder-shown) {
-        border: transparent;
-        outline: 2px solid var(--clr-success);
-    }
-    &:user-invalid:not(:placeholder-shown) {
-        border: transparent;
-        outline: 2px solid var(--clr-error);
-    }
-}
-
-select {
-    width: min(250px, 450px);
-    height: 50px;
-    font-family: var(--font-family), sans-serif;
-    font-size: var(--fs-text);
-    padding: 0.375em 0.75em;
-    border-radius: 0.875em;
-    border: 1px solid var(--clr-text-secondary);
-    background-color: var(--clr-background);
-    cursor: pointer;
-
-    &:focus, &:focus-visible {
-        outline-offset: -2px;
-        outline-color: var(--clr-primary);
     }
 }
 

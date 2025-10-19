@@ -3,15 +3,15 @@
          [ngClass]="currentNotification.type">
 
         @if (currentNotification.type === 'success') {
-            <span class="material-icons success">check_circle</span>
+            <mat-icon aria-hidden="false" aria-label="Check Icon" fontIcon="check_circle"></mat-icon>
         }
 
         @if (currentNotification.type === 'warning') {
-            <span class="material-icons warning">info</span>
+            <mat-icon aria-hidden="false" aria-label="Warning Icon" fontIcon="warning"></mat-icon>
         }
 
         @if (currentNotification.type === 'error') {
-            <span class="material-icons error">error</span>
+            <mat-icon aria-hidden="false" aria-label="Error Icon" fontIcon="error"></mat-icon>
         }
 
         <p class="message">{{ currentNotification.message }}</p>
