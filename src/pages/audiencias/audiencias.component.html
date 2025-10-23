@@ -1,1 +1,124 @@
-<p>audiencias works!</p>
+<section class="search-filters">
+  <h2>Buscar Audiencias</h2>
+  <div class="filters">
+
+    <div class="filter adjust-width">
+      <h3>Sala</h3>
+      <mat-form-field appearence="fill" class="adjust-width">
+        <mat-label>Seleccionar Sala</mat-label>
+        <mat-select [(ngModel)]="filterValues.sala" (selectionChange)="applyFilters()">
+          <mat-option value="">Todas</mat-option> <mat-option value="Sala 1">Sala 1</mat-option>
+          <mat-option value="Sala 2">Sala 2</mat-option>
+          <mat-option value="Sala 3">Sala 3</mat-option>
+          <mat-option value="Sala 4">Sala 4</mat-option> </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="filter adjust-width">
+      <h3>Juez - Fiscal</h3>
+      <mat-form-field appearence="fill" class="adjust-width">
+        <mat-label>Seleccione una Autoridad</mat-label>
+        <mat-select [(ngModel)]="filterValues.autoridad" (selectionChange)="applyFilters()">
+          <mat-option value="">Todos</mat-option>
+          <mat-option value="Juez Perez">Juez Perez</mat-option>
+          <mat-option value="Juez Gomez">Juez Gomez</mat-option>
+          <mat-option value="Juez Lopez">Juez Lopez</mat-option>
+          <mat-option value="Juez Martinez">Juez Martinez</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="filter adjust-width">
+      <h3>Fecha</h3>
+      <mat-form-field appearence="fill" class="adjust-width">
+        <mat-label>Seleccione una Fecha</mat-label>
+        <input matInput [matDatepicker]="picker"
+               [(ngModel)]="filterValues.fecha"
+               (dateChange)="applyFilters()"/>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="filter adjust-width">
+      <h3>Tipo</h3>
+      <mat-form-field appearence="fill" class="adjust-width">
+        <mat-label>Seleccione un Tipo</mat-label>
+        <mat-select [(ngModel)]="filterValues.tipo" (selectionChange)="applyFilters()">
+          <mat-option value="">Todos</mat-option>
+          <mat-option value="Oral">Oral</mat-option>
+          <mat-option value="Escrita">Escrita</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</section>
+
+<section class="table-section">
+  <table mat-table matSort [dataSource]="dataSource">
+    <ng-container matColumnDef="cuij">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="cuij">CUIJ</th>
+      <td mat-cell *matCellDef="let element">#{{element.cuij}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="caratula">
+      <th mat-header-cell *matHeaderCellDef>Carátula</th>
+      <td mat-cell *matCellDef="let element">{{element.caratula}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha y hora">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="fecha">Fecha y Hora</th>
+      <td mat-cell *matCellDef="let element">{{element.fecha}} - {{element.hora}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo">
+      <th mat-header-cell *matHeaderCellDef>Tipo</th>
+      <td mat-cell *matCellDef="let element">{{element.tipo}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef>Estado</th>
+      <td mat-cell *matCellDef="let element">
+        <!-- Esto debería cambiar sabiendo lo que trae la API -->
+        @if (element.estado === 'Finalizada') {
+          <mat-icon style="color: var(--clr-error);">circle</mat-icon>
+        }
+
+        @if (element.estado === 'En Proceso') {
+          <mat-icon style="color: var(--clr-success);">circle</mat-icon>
+        }
+
+        @if (element.estado === 'Por Comenzar') {
+          <mat-icon style="color: var(--clr-warning);">circle</mat-icon>
+        }
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="autoridad">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Autoridad</th>
+      <td mat-cell *matCellDef="let element">{{element.autoridad}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="sala">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="sala">Sala</th>
+      <td mat-cell *matCellDef="let element">{{element.sala}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" aria-label="Eliminar audiencia">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="accent" aria-label="Editar audiencia">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecciona la cantidad de Audiencias"></mat-paginator>
+</section>

@@ -1,5 +1,3 @@
-// material.module.ts
-
 import { NgModule } from '@angular/core';
 
 // Módulos de Material que vas a usar
@@ -11,6 +9,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatSort, MatSortModule} from '@angular/material/sort';
+import { MatTableModule} from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -22,7 +23,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSort,
+    MatSortModule,
+    MatPaginator,
+    MatPaginatorModule,
+    MatTableModule
   ],
   exports: [
     // Y es crucial exportarlos para que estén disponibles
@@ -33,7 +39,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSort,
+    MatSortModule,
+    MatPaginator,
+    MatPaginatorModule,
+    MatTableModule
   ]
 })
 export class MaterialModule { }

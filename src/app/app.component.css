@@ -1,0 +1,8 @@
+.wrapper {
+  max-width: 1380px;
+  height: 100%;
+  margin: 2.5rem 1.875rem 1.5rem 1.875rem;
+
+  background-color: var(--clr-background-secondary);
+  border-radius: 14px;
+}
