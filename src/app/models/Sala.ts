@@ -3,6 +3,7 @@ export interface Sala {
   id: number;
   nombre: string;
   lugar: string;
-  fecha: Date;
-  distrito_judicial_id: DistritoJudicial['id'];
+  fechaCreacion: Date;
+  distritoJudicialId: number;
+  distritoJudicial?: DistritoJudicial;
 }

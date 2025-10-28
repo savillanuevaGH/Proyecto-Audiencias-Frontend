@@ -1,7 +1,13 @@
 .search-filters {
-  padding: 5px 30px;
-
+  padding: 0 20px 10px;
   border-bottom: 1px solid var(--clr-text-secondary);
+}
+
+.search-filters .header {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 section,

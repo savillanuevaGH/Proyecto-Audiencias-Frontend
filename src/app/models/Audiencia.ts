@@ -3,11 +3,12 @@ export interface Audiencia {
     nombre: string;
     estado: string;
     tipo: string;
-    cuit: string;
-    hora_inicio: string;
+    cuij: string;
+    horaInicio: string;
     duracion: number;
-    fecha_creacion: Date;
-    fecha_inscripcion: Date;
-    creado_por_usuario: number;
-    modificado_por_usuario: number;
+    fechaCreacion: Date;
+    fechaInscripcion: Date;
+    creadoPorUsuario: number;
+    modificadoPorUsuario: number;
+    sala: number;
 }
