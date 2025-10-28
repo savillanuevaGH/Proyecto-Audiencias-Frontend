@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../../../material/material/material.module';
@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './log-in-modal.component.html', 
   styleUrl: './log-in-modal.component.css'
 })
-export class LogInModalComponent implements OnInit, OnDestroy {
+export class LogInModalComponent implements OnInit {
   loginForm!: FormGroup;
 
   constructor(
@@ -50,9 +50,5 @@ export class LogInModalComponent implements OnInit, OnDestroy {
   onClose(): void {
     // Usamos dialogRef.close() para cerrar el diálogo sin devolver datos.
     this.dialogRef.close(null); 
-  }
-
-  ngOnDestroy(): void {
-    // Ya no necesitas unsubscribe si eliminaste la suscripción a modalService
   }
 }

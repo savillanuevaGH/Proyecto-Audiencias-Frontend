@@ -5,53 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { AudienciaModalComponent } from './components/audiencia-modal/audiencia-modal.component';
+
 import { Audiencia } from '../../app/models/Audiencia';
 
 // Datos de prueba
-const AUDIENCIAS: Audiencia[] = [
-  {
-    id: 1,
-    nombre: 'Audiencia 1',
-    estado: 'Programada',
-    tipo: 'Oral',
-    cuij: '20-12345678-9',
-    horaInicio: '10:00 AM',
-    duracion: 60,
-    fechaCreacion: new Date('2024-01-01'),
-    fechaInscripcion: new Date('2024-01-10'),
-    creadoPorUsuario: 1,
-    modificadoPorUsuario: 2,
-    sala: 1
-  },
-  {
-    id: 2,
-    nombre: 'Audiencia 2',
-    estado: 'Finalizada',
-    tipo: 'Escrita',
-    cuij: '27-87654321-0',
-    horaInicio: '02:00 PM',
-    duracion: 90,
-    fechaCreacion: new Date('2024-02-01'),
-    fechaInscripcion: new Date('2024-02-15'),
-    creadoPorUsuario: 2,
-    modificadoPorUsuario: 3,
-    sala: 2
-  },
-  {
-    id: 3,
-    nombre: 'Audiencia 3',
-    estado: 'En Proceso',
-    tipo: 'Escrita',
-    cuij: '20-98765432-1',
-    horaInicio: '11:30 AM',
-    duracion: 45,
-    fechaCreacion: new Date('2024-03-01'),
-    fechaInscripcion: new Date('2024-03-12'),
-    creadoPorUsuario: 1,
-    modificadoPorUsuario: 1,
-    sala: 1
-  }
-]
+const AUDIENCIAS: Audiencia[] = []
 
 @Component({
   selector: 'app-audiencias',  imports: [MaterialModule, FormsModule, DatePipe],
@@ -72,9 +32,19 @@ export class AudienciasComponent implements AfterViewInit {
     tipo: ''
   }
 
-  constructor() {
+  constructor(
+    private dialog: MatDialog
+  ) {
     this.dataSource = new MatTableDataSource(AUDIENCIAS);
     this.dataSource.filterPredicate = this.createFilterPredicate();
+  }
+
+  openCreateModal(): void {
+    this.dialog.open(AudienciaModalComponent, {
+      width: '600px',
+      disableClose: false,
+      data: { formType: 'create' }
+    });
   }
 
   ngAfterViewInit() {

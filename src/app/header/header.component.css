@@ -8,7 +8,7 @@
 }
 
 .header__info {
-    height: max-content;
+    height: 100%;
     padding: 10px 17.5px;
     background-color: var(--clr-background-secondary);
 }
