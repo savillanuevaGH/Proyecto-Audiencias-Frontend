@@ -56,9 +56,14 @@
 
   /* Quitar los efectos visuales internos de Material */
   box-shadow: none !important;
-  padding: 0 16px !important;
+  padding-inline: 0 !important;
+  padding-left: 10px !important;
   width: var(--mat-form-field-width) !important;
   height: var(--mat-form-field-container-height) !important;
+}
+
+.mat-mdc-floating-label {
+  font-size: var(--fs-text, 0.875rem) !important;
 }
 
 /* Ocultar la línea inferior en estado normal (inactivo) */
@@ -90,9 +95,18 @@
     border-color: transparent !important; /* Desactiva el borde gris al enfocar */
 }
 
+.mat-mdc-form-field.mat-form-field-animations-enabled .mdc-text-field__input {
+  padding: 0 4px !important;
+}
+
+.mat-mdc-form-field-infix {
+  padding-right: 10px !important;
+}
+
 /* El input nativo (Padding y Centrado) */
 .mat-mdc-form-field-input-control {
-  padding: 0 !important;
+  padding-inline: 0 !important;
+  padding-left: 8px !important;
   line-height: var(--mat-form-field-container-height);
 }
 

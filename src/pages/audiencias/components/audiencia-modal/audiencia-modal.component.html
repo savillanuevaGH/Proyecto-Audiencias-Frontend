@@ -2,66 +2,98 @@
 
 <div mat-dialog-content>
   <form [formGroup]="newAudienciaForm">
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>CUIJ</mat-label>
-      <input matInput formControlName="cuij" />
-    </mat-form-field>
+    <div class="row">
+      <div class="input">
+        <h3>CUIJ</h3>
+        <mat-form-field appearance="fill" class="adjust-width">
+          <mat-label>CUIJ</mat-label>
+          <input matInput formControlName="cuij" />
+        </mat-form-field>
+      </div>
 
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Carátula</mat-label>
-      <input matInput formControlName="caratula" />
-    </mat-form-field>
+      <div class="input">
+        <h3>Carátula</h3>
+        <mat-form-field appearance="fill" class="adjust-width">
+          <mat-label>Carátula</mat-label>
+          <input matInput formControlName="caratula" />
+        </mat-form-field>
+      </div>
+    </div>
 
-    <mat-form-field appearence="fill" class="adjust-width">
-        <mat-label>Seleccione una Fecha</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fecha"/>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+    <div class="row">
+      <div class="input">
+        <h3>Fecha</h3>
+        <mat-form-field appearence="fill" class="adjust-width">
+          <mat-label>Seleccione una Fecha</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fecha" />
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
 
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Duración (minutos)</mat-label>
-      <input matInput type="number" formControlName="duracion" />
-    </mat-form-field>
+      <div class="input">
+        <h3>Duración</h3>
+        <mat-form-field appearance="fill" class="adjust-width">
+          <mat-label>Duración (minutos)</mat-label>
+          <input matInput type="number" formControlName="duracion" />
+        </mat-form-field>
+      </div>
+    </div>
 
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Seleccion una Sala</mat-label>
-      <mat-select formControlName="sala">
-          <mat-option value="Sala 2">Sala 2</mat-option>
-          <mat-option value="Sala 3">Sala 3</mat-option>
-          <mat-option value="Sala 4">Sala 4</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <div class="row">
+      <div class="input">
+        <h3>Sala</h3>
+        <mat-form-field appearance="fill" class="adjust-width">
+          <mat-label>Seleccione una Sala</mat-label>
+          <mat-select formControlName="sala">
+            <mat-option value="Sala 2">Sala 2</mat-option>
+            <mat-option value="Sala 3">Sala 3</mat-option>
+            <mat-option value="Sala 4">Sala 4</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Seleccione una Autoridad</mat-label>
-        <mat-select formControlName="autoridades">
-          <mat-option value="Juez Perez">Juez Perez</mat-option>
-          <mat-option value="Juez Gomez">Juez Gomez</mat-option>
-          <mat-option value="Juez Lopez">Juez Lopez</mat-option>
-          <mat-option value="Juez Martinez">Juez Martinez</mat-option>
-        </mat-select>
-    </mat-form-field>
+      <div class="input">
+        <h3>Autoridades</h3>
+        <mat-form-field appearance="fill" class="adjust-width">
+          <mat-label>Seleccione una Autoridad</mat-label>
+          <mat-select formControlName="autoridades">
+            <mat-option value="Juez Perez">Juez Perez</mat-option>
+            <mat-option value="Juez Gomez">Juez Gomez</mat-option>
+            <mat-option value="Juez Lopez">Juez Lopez</mat-option>
+            <mat-option value="Juez Martinez">Juez Martinez</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
 
-    <mat-form-field appearence="fill" class="adjust-width">
-      <mat-label>Seleccione un Tipo</mat-label>
-        <mat-select formControlName="tipo">
-          <mat-option value="Oral">Oral</mat-option>
-          <mat-option value="Escrita">Escrita</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <div class="row">
+      <div class="input">
+        <h3>Tipo</h3>
+        <mat-form-field appearence="fill" class="adjust-width">
+          <mat-label>Seleccione un Tipo</mat-label>
+          <mat-select formControlName="tipo">
+            <mat-option value="Oral">Oral</mat-option>
+            <mat-option value="Escrita">Escrita</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Estado</mat-label>
-      <mat-select formControlName="estado">
-        <mat-option value="Programada">Programada</mat-option>
-        <mat-option value="En Proceso">En Proceso</mat-option>
-        <mat-option value="Finalizada">Finalizada</mat-option>
-      </mat-select>
-    </mat-form-field>
+      <div class="input">
+        <h3>Estado</h3>
+        <mat-form-field appearance="fill" class="adjust-width">
+          <mat-label>Elige la opción</mat-label>
+          <mat-select formControlName="estado">
+            <mat-option value="Programada">Programada</mat-option>
+            <mat-option value="En Proceso">En Proceso</mat-option>
+            <mat-option value="Finalizada">Finalizada</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
 
     <div mat-dialog-actions align="center">
-      <button mat-button (click)="onCreate()" [disabled]="newAudienciaForm.invalid">Crear Audiencia</button>
+      <button mat-flat-button (click)="onCreate()" [disabled]="newAudienciaForm.invalid">Crear Audiencia</button>
     </div>
   </form>
 </div>

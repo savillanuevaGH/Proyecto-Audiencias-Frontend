@@ -41,7 +41,8 @@ export class AudienciasComponent implements AfterViewInit {
 
   openCreateModal(): void {
     this.dialog.open(AudienciaModalComponent, {
-      width: '600px',
+      width: '720px',
+      height: '574px',
       disableClose: false,
       data: { formType: 'create' }
     });

@@ -1,0 +1,49 @@
+.mat-mdc-dialog-title {
+  margin: 0;
+  border-bottom: 2px solid var(--clr-text-secondary);
+  font-weight: 600;
+
+  background-color: var(--clr-background);
+}
+
+.mat-mdc-dialog-content {
+  max-height: none;
+
+  background-color: var(--clr-background-secondary);
+
+  overflow: hidden;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 0;
+
+  background-color: var(--clr-background-secondary);
+}
+
+form .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.input {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input h3 {
+  margin-left: 4px;
+  color: var(--clr-text);
+}
+
+.adjust-width,
+.input {
+  width: 100%;
+}
